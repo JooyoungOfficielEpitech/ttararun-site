@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인위치정보 처리방침 — 따라런</title>
+<meta name="description" content="따라런 개인위치정보 처리방침. 위치정보의 보호 및 이용 등에 관한 법률 제21조의2에 따라 개인위치정보의 처리 목적·보유기간·제3자 제공·위탁·권리 행사 방법을 공개합니다.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>따라런</a>
+    <nav class="site-nav">
+      <a href="index.html">소개</a>
+      <a href="how-to-gpx.html">GPX 만드는 법</a>
+      <a href="terms-location.html">위치정보 이용약관</a>
+      <a href="location-policy.html" aria-current="page">개인위치정보 처리방침</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="support.html">문의</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap legal">
+
+<h1>개인위치정보 처리방침</h1>
+<p class="meta">버전 2026-09-01 · 시행일 <span class="todo">TODO: 시행일</span> · 「위치정보의 보호 및 이용 등에 관한 법률」 제21조의2에 따른 처리방침</p>
+
+<p><span class="todo">TODO: 상호</span>(이하 “회사”)는 러닝 코스 안내·기록 애플리케이션 <strong>따라런</strong>을 운영하면서 개인위치정보를 어떻게 처리하는지 아래와 같이 공개합니다.
+  수집·이용·제공에 관한 동의 사항은 「<a href="terms-location.html">위치기반서비스 이용약관</a>」에, 위치정보 외 개인정보 전반은 「<a href="privacy.html">개인정보처리방침</a>」에 따로 정합니다.</p>
+
+<div class="notice">
+  <p><strong>한 줄 요약</strong> — 위치정보는 “따라 뛰기”를 시작한 때부터 종료할 때까지만 수집하고, 궤적은 대한민국 내(AWS 서울 리전)에 저장하며, 크루에는 <strong>출석 여부·완주 시각·일치율만</strong> 제공하고 궤적은 제공하지 않습니다. 탈퇴하면 즉시 파기합니다.</p>
+</div>
+
+<h2 id="l1">1. 개인위치정보의 처리 목적 및 보유기간</h2>
+<div class="table-scroll">
+  <table>
+    <thead><tr><th>처리 목적</th><th>처리하는 정보</th><th>보유기간</th></tr></thead>
+    <tbody>
+      <tr><td>코스 안내, 이탈 알림, 진행률·페이스 계산</td><td>실시간 위도·경도</td><td>러닝 종료 즉시 실시간 처리 종료</td></tr>
+      <tr><td>러닝 기록 보관, 코스 일치율 계산·재계산</td><td>위치 궤적 파일(위도·경도·시각·정확도), 시작·종료 시각 및 좌표</td><td>회원 탈퇴 또는 이용자의 기록 삭제 시까지</td></tr>
+      <tr><td>크루 자동 출석 판정</td><td>완주 시각, 코스 일치율, 완주·검증 여부</td><td>회원 탈퇴, 제공 동의 철회, 크루·이벤트 삭제 시까지</td></tr>
+      <tr><td>부정 이용 방지</td><td>측정 정확도, 속도 통계, 모의 위치 여부, 궤적 파일 해시값</td><td>해당 러닝 기록과 동일</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>회사는 위 목적 외의 용도로 개인위치정보를 처리하지 않으며, 목적이 달성되면 제5항에 따라 지체 없이 파기합니다.</p>
+
+<h2 id="l2">2. 수집 방법 및 저장 위치</h2>
+<ul>
+  <li>개인위치정보는 <strong>단말기의 GPS</strong>로만 수집하며, 이동통신사 기지국 정보나 Wi-Fi 측위를 별도로 이용하지 않습니다.</li>
+  <li>수집은 이용자가 <strong>“따라 뛰기”를 시작한 때부터 종료할 때까지</strong>만 이루어집니다. 화면이 꺼진 상태에서도 안내를 이어가기 위해 수집이 계속될 수 있으며, 이때 단말기에 위치 사용 표시가 나타납니다.</li>
+  <li>수집된 궤적은 러닝 종료 시 <strong>HTTPS(TLS)</strong>로 암호화되어 회사의 위치정보시스템으로 전송되고, <strong>Supabase(AWS 서울 리전 ap-northeast-2)</strong>의 데이터베이스와 파일 저장소에 저장됩니다.</li>
+  <li><strong>개인위치정보는 국외로 이전되지 않습니다.</strong></li>
+  <li>로그인하지 않은 <strong>게스트 모드</strong>에서는 위치정보가 단말기 안에서만 처리되며 회사로 전송되지 않습니다.</li>
+</ul>
+
+<h2 id="l3">3. 개인위치정보의 제3자 제공</h2>
+<ol>
+  <li>회사는 이용자가 <strong>스스로 크루에 가입하면서 해당 크루를 제공받는 자로 지정하고 크루별로 동의한 경우에만</strong>, 그 크루의 크루장 및 멤버에게 <strong>출석 여부, 완주 시각, 코스 일치율(%)</strong>과 닉네임을 제공합니다.</li>
+  <li><strong>위치 궤적, 이동 경로, 러닝 거리, 상세 페이스는 제3자에게 제공하지 않습니다.</strong></li>
+  <li>회사는 개인위치정보를 제3자에게 제공할 때마다 <strong>제공받는 자, 제공 일시, 제공 목적을 즉시 통보</strong>합니다. 통보는 푸시 알림으로 이루어지며, 서비스 내 “위치정보 제공내역” 화면에서도 확인할 수 있습니다.</li>
+  <li>이용자는 즉시 통보 대신 <strong>30일마다 모아서 통보</strong> 받는 방식을 선택할 수 있습니다(위치정보법 제19조 제4항, 같은 법 시행령 제24조). 선택하지 않으면 즉시 통보가 기본이며, 모아서 통보를 선택해도 “위치정보 제공내역” 화면에서는 제공 즉시 확인할 수 있습니다.</li>
+  <li>이용자는 크루별 제공 동의를 언제든지 철회할 수 있습니다 — <strong>설정 &gt; 위치정보 &gt; 크루별 제공 동의 &gt; 철회</strong>. 철회 시 해당 크루에서 탈퇴 처리되며 이후 출석 정보가 제공되지 않습니다.</li>
+  <li>그 밖에 법령에 특별한 규정이 있거나 수사기관이 법령에 정해진 절차와 방법에 따라 요구하는 경우에만 제공하며, 이 경우에도 그 사실을 이용자에게 통보합니다.</li>
+</ol>
+
+<h2 id="l4">4. 개인위치정보 처리의 위탁</h2>
+<p>회사는 개인위치정보의 저장·처리를 위하여 다음과 같이 업무를 위탁합니다. 위탁 사실은 이용자가 언제든지 확인할 수 있도록 이 방침에 공개합니다.</p>
+<div class="table-scroll">
+  <table>
+    <thead><tr><th>수탁자</th><th>위탁 업무</th><th>처리 위치</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Supabase, Inc.</strong></td>
+        <td>데이터베이스·파일 저장소·서버리스 함수 운영 (위치 궤적 저장, 일치율 재계산, 출석 판정)</td>
+        <td>Amazon Web Services <strong>서울 리전(ap-northeast-2)</strong> — 대한민국</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>제3자 제공 통보에 사용되는 푸시 알림에는 <strong>알림 토큰과 알림 문구만</strong> 전달되며, 위치 좌표나 궤적은 포함되지 않습니다. 푸시 전달 경로에 관한 사항은 「<a href="privacy.html#p5">개인정보처리방침 제5항</a>」에 공개되어 있습니다.</p>
+
+<h2 id="l5">5. 개인위치정보의 파기</h2>
+<ol>
+  <li>처리 목적이 달성되었거나 보유기간이 지난 개인위치정보는 제7항의 확인자료를 제외하고 <strong>지체 없이 파기</strong>하며, 복구·재생되지 않도록 조치합니다.</li>
+  <li>회원 탈퇴(계정 삭제) 시 러닝 기록, 출석 기록, <strong>궤적 파일·GPX 파일·공유 카드 이미지</strong>, 제공 기록, 동의 기록이 함께 삭제됩니다.</li>
+  <li>계정 삭제는 서비스 내 <strong>설정 &gt; 계정 &gt; 계정 삭제</strong>에서 직접 실행할 수 있으며, 삭제된 정보는 복구되지 않습니다.</li>
+</ol>
+
+<h2 id="l6">6. 개인위치정보주체의 권리·의무 및 행사방법</h2>
+<ul>
+  <li><strong>동의 철회</strong> — 수집·이용 동의는 계정 삭제로, 제3자 제공 동의는 크루별 철회로 각각 철회할 수 있습니다.</li>
+  <li><strong>일시중지 요구</strong> — 러닝을 종료하거나 단말기 운영체제의 위치 권한을 해제하면 즉시 수집이 중지됩니다.</li>
+  <li><strong>열람·고지 요구</strong> — 본인에 대한 위치정보 수집·이용·제공사실 확인자료, 본인의 개인위치정보가 법률에 따라 제3자에게 제공된 이유와 내용의 열람·고지를 요구할 수 있습니다(위치정보법 제24조).</li>
+  <li><strong>정정 요구</strong> — 위 자료에 오류가 있는 경우 정정을 요구할 수 있습니다.</li>
+  <li>서비스 내 <strong>설정 &gt; 위치정보 &gt; 위치정보 제공내역</strong>에서 제공 내역을 직접 열람할 수 있으며, 그 밖의 요구는 <a href="mailto:2000jooyoung@gmail.com">2000jooyoung@gmail.com</a>으로 접수합니다. 회사는 본인 확인 후 처리 결과를 회신하며, 정당한 사유 없이 요구를 거절하지 않습니다.</li>
+</ul>
+
+<h2 id="l7">7. 위치정보 수집·이용·제공사실 확인자료의 보유근거 및 보유기간</h2>
+<ul>
+  <li>회사는 위치정보법 <strong>제16조 제2항</strong>에 따라 개인위치정보의 수집·이용·제공사실 확인자료를 위치정보시스템에 <strong>자동으로 기록·보존</strong>합니다.</li>
+  <li>확인자료 항목: 이용자 식별자, 러닝 시작·종료 시각, 궤적 파일 경로, 제공받은 크루, 제공 일시, 통보 일시, 동의 유형·약관 버전·동의 및 철회 일시.</li>
+  <li>보유근거: 위치정보법 제16조 제2항 / 보유기간: <strong>6개월</strong>. 다만 이용자가 동의를 철회한 부분은 지체 없이 파기합니다.</li>
+</ul>
+
+<h2 id="l8">8. 만 14세 미만 및 8세 이하의 아동등의 보호</h2>
+<ul>
+  <li>회사는 <strong>만 14세 미만 아동의 개인위치정보를 수집하지 않습니다.</strong> 가입 시 출생연도를 확인하여 만 14세 미만이면 계정 생성을 차단하며, 서버에서도 검증합니다(위치정보법 제25조).</li>
+  <li>위치정보법 <strong>제26조</strong>에 따라 8세 이하의 아동, 피성년후견인, 「장애인복지법」상 장애인 중 중증장애인에 해당하는 사람의 생명·신체 보호를 위한 동의는 그 <strong>보호의무자</strong>의 동의로 갈음할 수 있습니다. 보호의무자는 보호의무자임을 증명하는 서면을 첨부한 서면동의서를 <a href="mailto:2000jooyoung@gmail.com">2000jooyoung@gmail.com</a>으로 제출해야 하며, 제6항의 권리를 대신 행사할 수 있습니다.</li>
+  <li>만 14세 미만 가입 차단으로 인해 현재 8세 이하 아동의 개인위치정보는 수집되지 않습니다.</li>
+</ul>
+
+<h2 id="l9">9. 위치정보관리책임자</h2>
+<dl class="info">
+  <div><dt>위치정보관리책임자</dt><dd><span class="todo">TODO: 성명</span> / <span class="todo">TODO: 직위</span></dd></div>
+  <div><dt>연락처</dt><dd><span class="todo">TODO: 전화번호</span> · <a href="mailto:2000jooyoung@gmail.com">2000jooyoung@gmail.com</a></dd></div>
+  <div><dt>주소</dt><dd><span class="todo">TODO: 사업장 주소</span></dd></div>
+  <div><dt>담당 업무</dt><dd>위치정보법 제16조 제1항에 따른 관리적·기술적 보호조치 수립·시행, 확인자료 관리, 이용자 권리 행사 요구 처리, 고충 처리</dd></div>
+</dl>
+
+<h2 id="l10">10. 손해배상 및 분쟁조정</h2>
+<ul>
+  <li>이용자는 회사가 위치정보법 제15조부터 제26조까지를 위반한 행위로 손해를 입은 경우 손해배상을 청구할 수 있습니다(제27조).</li>
+  <li>위치정보와 관련한 분쟁은 협의로 처리하되, 협의가 이루어지지 않으면 위치정보법 제28조에 따라 <strong>방송미디어통신위원회에 재정</strong>을 신청할 수 있습니다.</li>
+  <li>개인정보 분쟁조정위원회(1833-6972) 또는 개인정보침해 신고센터(118)에 조정·상담을 신청할 수도 있습니다.</li>
+</ul>
+
+<h2 id="l11">11. 처리방침의 변경</h2>
+<p>이 방침은 <span class="todo">TODO: 시행일</span>부터 적용됩니다. 내용의 추가·삭제·수정이 있는 경우 시행 <strong>7일 전</strong>(이용자에게 불리한 변경은 <strong>30일 전</strong>)부터 서비스 화면 또는 이 웹사이트에 공지합니다.</p>
+
+<p style="margin-top:26px">
+  <a class="btn" href="terms-location.html">위치기반서비스 이용약관 →</a>
+  <a class="btn" href="privacy.html">개인정보처리방침 →</a>
+</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="index.html">소개</a>
+      <a href="how-to-gpx.html">GPX 만드는 법</a>
+      <a href="terms-location.html">위치정보 이용약관</a>
+      <a href="location-policy.html">개인위치정보 처리방침</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="support.html">문의</a>
+    </nav>
+    <p>문의: <a href="mailto:2000jooyoung@gmail.com">2000jooyoung@gmail.com</a></p>
+    <p>© 2026 따라런 (Ttararun)</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>따라런 — GPX 코스를 따라 뛰고, 크루 출석은 자동으로</title>
+<meta name="description" content="네이버 지도·카카오맵에서 만든 러닝 코스(GPX)를 불러와 폰으로 따라 뛰고, 완주하는 순간 크루 출석이 자동으로 기록되는 러닝 앱.">
+<meta property="og:title" content="따라런 — GPX 코스를 따라 뛰고, 크루 출석은 자동으로">
+<meta property="og:description" content="코스를 만드는 건 지도 앱에 맡기고, 따라런은 그 코스를 뛰게 하고 남기고 크루로 묶습니다.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>따라런</a>
+    <nav class="site-nav">
+      <a href="index.html" aria-current="page">소개</a>
+      <a href="how-to-gpx.html">GPX 만드는 법</a>
+      <a href="terms-location.html">위치정보 이용약관</a>
+      <a href="location-policy.html">개인위치정보 처리방침</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="support.html">문의</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <span class="badge">러닝크루를 위한 코스 실행 · 자동 출석 앱</span>
+  <h1>코스는 지도에서 만들고,<br><em>따라런에서 뜁니다.</em></h1>
+  <p class="lead">네이버 지도 PC 웹이나 카카오맵에서 만든 러닝 코스(GPX)를 불러와 휴대폰으로 따라 뛰고,
+    크루 이벤트 코스를 완주하는 순간 출석이 자동으로 찍힙니다.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="how-to-gpx.html">GPX 만드는 법 보기</a>
+    <a class="btn" href="support.html">문의하기</a>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>따라런이 하는 일</h2>
+  <p class="section-sub">코스를 “만드는” 기능은 지도 서비스에 맡깁니다. 따라런은 그 다음 — 뛰고, 남기고, 크루로 묶는 레이어입니다.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>GPX 코스 불러오기</h3>
+      <p>네이버 지도·카카오맵·스트라바·가민에서 내보낸 .gpx 파일을 파일 앱이나 공유 시트로 열면 바로 코스가 됩니다. 거리·고도·예상 시간을 자동으로 계산해 보관함에 저장합니다.</p>
+    </article>
+    <article class="card">
+      <h3>따라 뛰기</h3>
+      <p>지도 위에 코스와 내 위치를 겹쳐 보여 주고, 남은 거리·경과 시간·현재 페이스·진행률을 크게 띄웁니다. 화면을 꺼도 안내가 이어집니다.</p>
+    </article>
+    <article class="card">
+      <h3>이탈 알림 · 음성 안내</h3>
+      <p>코스에서 30m 이상 벗어나면 진동과 음성으로 알려 주고, 복귀하면 다시 알려 줍니다. 1km마다 페이스와 남은 거리를 한국어 음성으로 안내합니다.</p>
+    </article>
+    <article class="card">
+      <h3>코스 일치율과 기록</h3>
+      <p>내 궤적이 코스를 얼마나 정확히 따라갔는지 일치율(%)로 계산합니다. 기록은 코스에 쌓여 “이 코스 3번 뜀, 최고 42:10”처럼 보입니다.</p>
+    </article>
+    <article class="card">
+      <h3>크루 자동 출석</h3>
+      <p>크루장이 코스와 시간 창으로 런 이벤트를 만들고 링크를 뿌리면, 멤버가 그 코스를 완주하는 순간 서버 검증을 거쳐 출석판에 자동으로 표시됩니다.</p>
+    </article>
+    <article class="card">
+      <h3>공유 카드</h3>
+      <p>지도 위 궤적과 거리·시간·일치율을 담은 이미지를 만들어 인스타그램 스토리나 오픈채팅에 바로 공유할 수 있습니다.</p>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>화면 미리 보기</h2>
+  <p class="section-sub">실제 앱 화면입니다.</p>
+  <ul class="shots">
+    <li><figure><img src="shots/01.png" alt="코스 보관함 화면 — 저장된 러닝 코스 목록과 GPX 가져오기 버튼" loading="lazy" width="1320" height="2868"><figcaption>네이버 코스 그대로 불러오기</figcaption></figure></li>
+    <li><figure><img src="shots/02.png" alt="코스 상세 화면 — 지도 위 코스, 거리·고도·예상 시간과 따라 뛰기 버튼" loading="lazy" width="1320" height="2868"><figcaption>길 헤매지 않게 따라 뛰기</figcaption></figure></li>
+    <li><figure><img src="shots/03.png" alt="따라 뛰기 화면 — 지도 위 코스와 현재 위치, 남은 거리·경과 시간·페이스·진행률" loading="lazy" width="1320" height="2868"><figcaption>벗어나면 바로 알려줘요</figcaption></figure></li>
+    <li><figure><img src="shots/04.png" alt="완주 화면 — 코스 일치율 90%와 거리·시간·평균 페이스·이탈 횟수" loading="lazy" width="1320" height="2868"><figcaption>완주하면 크루 출석 자동</figcaption></figure></li>
+    <li><figure><img src="shots/05.png" alt="내 기록 화면 — 월별 러닝 횟수·총 거리·총 시간과 기록 목록" loading="lazy" width="1320" height="2868"><figcaption>오늘의 기록을 카드로</figcaption></figure></li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>위치정보를 다루는 방식</h2>
+  <p class="section-sub">따라런은 러닝 앱이라 위치정보를 다룹니다. 무엇을 언제 수집하고 어디에 보관하는지 먼저 밝힙니다.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>러닝 중에만 수집</h3>
+      <p>“따라 뛰기”를 시작한 뒤부터 종료할 때까지만 위치를 수집합니다. 러닝을 끝내면 수집을 멈춥니다.</p>
+    </article>
+    <article class="card">
+      <h3>국내 보관</h3>
+      <p>궤적은 Supabase(AWS 서울 리전, ap-northeast-2)에 HTTPS로 전송·저장됩니다. 로그인 없이 쓰는 게스트 모드에서는 기기 밖으로 나가지 않습니다.</p>
+    </article>
+    <article class="card">
+      <h3>크루에는 궤적이 아니라 결과만</h3>
+      <p>크루장·멤버에게 제공되는 것은 출석 여부, 완주 시각, 코스 일치율뿐입니다. 궤적과 거리는 본인만 봅니다.</p>
+    </article>
+    <article class="card">
+      <h3>동의는 크루별로, 철회도 언제든</h3>
+      <p>제3자 제공 동의는 본인이 가입한 크루마다 따로 받습니다. 설정 &gt; 위치정보에서 크루별로 철회할 수 있습니다.</p>
+    </article>
+    <article class="card">
+      <h3>제공될 때마다 통보</h3>
+      <p>출석 정보가 크루에 제공되면 푸시로 알려 드립니다. 원하면 30일 단위로 모아서 받도록 바꿀 수 있고, 앱 안 “위치정보 제공내역”에서도 확인할 수 있습니다.</p>
+    </article>
+    <article class="card">
+      <h3>탈퇴하면 즉시 파기</h3>
+      <p>앱 안에서 계정을 삭제하면 러닝 기록·출석·궤적 파일·GPX·공유 카드 이미지가 함께 지워집니다.</p>
+    </article>
+  </div>
+  <p style="margin-top:18px">
+    자세한 내용은 <a href="terms-location.html">위치정보 이용약관</a>,
+    <a href="location-policy.html">개인위치정보 처리방침</a>,
+    <a href="privacy.html">개인정보처리방침</a>에 있습니다.
+    만 14세 미만은 계정을 만들 수 없습니다.
+  </p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="index.html">소개</a>
+      <a href="how-to-gpx.html">GPX 만드는 법</a>
+      <a href="terms-location.html">위치정보 이용약관</a>
+      <a href="location-policy.html">개인위치정보 처리방침</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="support.html">문의</a>
+    </nav>
+    <p>문의 · 개인정보 관련 요청: <a href="mailto:2000jooyoung@gmail.com">2000jooyoung@gmail.com</a></p>
+    <p>네이버 지도는 네이버(주)의, 카카오맵은 (주)카카오의 상표이며, 따라런은 두 회사와 제휴·후원 관계가 없습니다.</p>
+    <p>© 2026 따라런 (Ttararun)</p>
+  </div>
+</footer>
+
+</body>
+</html>
